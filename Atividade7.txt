@@ -1,0 +1,48 @@
+-- create database blockbuster -- // cria o database 
+
+/* use blockbuster; -- // comando para utilizar o database petshop
+create table filmes ( -- // criando a tabela cadastro
+	id int(5) auto_increment, 		-- //matricula do filme
+	nome varchar(100),				-- // nome do filme
+    genero varchar(20),				-- // genero do filme, exemplo drama, terror, comedia
+    ano int(4),						-- // ano de lançamento
+    duracao int(5),					-- // duraçao do filme em minutos
+    primary key(id)					-- // chave primaria determinando que id é a chave primaria do aluno
+); */
+
+-- select*from filmes -- para visualizar a tabela recem criada.
+
+/*insert into filmes (nome, genero, ano, duracao) values ("Titanic", "drama", 1999, 120);
+insert into filmes (nome, genero, ano, duracao) values ("Django Livre", "ação", 2014, 120);
+insert into filmes (nome, genero, ano, duracao) values ("Bastardos Inglorios", "ação", 2012, 100);
+insert into filmes (nome, genero, ano, duracao) values ("Frozen", "animação", 2013, 90);
+insert into filmes (nome, genero, ano, duracao) values ("Rei Leão", "animação", 1996, 90);
+insert into filmes (nome, genero, ano, duracao) values ("Hercules", "animação", 1999, 80);
+insert into filmes (nome, genero, ano, duracao) values ("Podres de ricos", "comedia romantica", 2019, 100);
+insert into filmes (nome, genero, ano, duracao) values ("10 coisas que odeio em voce", "comedia romantica", 1999, 100);
+insert into filmes (nome, genero, ano, duracao) values ("Doentes de amor", "comedia romantica", 2017, 90);
+insert into filmes (nome, genero, ano, duracao) values ("O grito", "horror", 2005, 90);
+insert into filmes (nome, genero, ano, duracao) values ("It a coisa", "terror", 2017, 120);
+insert into filmes (nome, genero, ano, duracao) values ("Diario de bridget jones", "comedia romantica", 2001, 90);
+insert into filmes (nome, genero, ano, duracao) values ("De repente 30", "comedia romantica", 2004, 90);
+insert into filmes (nome, genero, ano, duracao) values ("Scott Pilgrim", "comedia romantica", 2010, 90);
+insert into filmes (nome, genero, ano, duracao) values ("Simplesmente amor", "romance", 2003, 90);
+insert into filmes (nome, genero, ano, duracao) values ("Avatar", "açao", 2008, 120);
+insert into filmes (nome, genero, ano, duracao) values ("Mulan", "drama", 2020, 90);
+insert into filmes (nome, genero, ano, duracao) values ("O exorcismo de Emily Rose", "suspense", 2005, 90);
+insert into filmes (nome, genero, ano, duracao) values ("Cemiterio de animais", "terror", 1990, 80);
+insert into filmes (nome, genero, ano, duracao) values ("Madrugada dos mortos", "terror", 2000, 90);
+insert into filmes (nome, genero, ano, duracao) values ("Kill Bill vol1", "açao", 2000, 120);
+insert into filmes (nome, genero, ano, duracao) values ("Kill Bill vol2", "açao", 2002, 120);
+insert into filmes (nome, genero, ano, duracao) values ("Cãe de Aluguel", "drama", 1998, 120);
+insert into filmes (nome, genero, ano, duracao) values ("Os oito odiados", "drama", 2015, 120);
+insert into filmes (nome, genero, ano, duracao) values ("Mad max", "açao", 2014, 122);
+insert into filmes (nome, genero, ano, duracao) values ("O exorcista", "horror", 1997, 120); */
+
+-- select*from filmes where nome like 'S%'; -- select que retorna os filmes cujo nome começa com S
+-- select*from filmes where genero = "comedia romantica"; -- select que retorna os filmes cuja categoria é comedia romantica
+
+-- select*from filmes -- para identificar qual dado desejo deletar, no caso é o id 10 (filme o grito).
+-- delete from filmes where id = 10;
+
+-- update filmes set duracao = 98 where id = 6; -- atualizar duracao do id 6 de 90 para 98
