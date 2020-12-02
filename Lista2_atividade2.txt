@@ -1,0 +1,83 @@
+-- create database db_ecommerce2 -- // cria o database 
+
+/*use db_ecommerce2; -- // comando para utilizar o database criado
+create table tb_categoria (				
+	id bigint not null auto_increment, 		-- //matricula 
+	loja varchar(20),						-- // loja que oferece o produto
+	cidade varchar(20),							-- // cidade da loja
+	retirada varchar(20),						-- // se possui retirada no local do produto (S/N)				
+	primary key(id)							-- // chave primaria determinando que id é a chave primaria
+);*/
+
+-- populando a tabela tb_categoria:
+
+/*insert into tb_categoria (loja, cidade, retirada) values ("Magazine Luiza", "Campinas", "N");
+insert into tb_categoria (loja, cidade, retirada) values ("Fast Shop", "Indaiatuba", "S");
+insert into tb_categoria (loja, cidade, retirada) values ("Ponto Frio", "Hortolandia", "N");
+insert into tb_categoria (loja, cidade, retirada) values ("Ricardo Eletro", "Americana", "S");
+insert into tb_categoria (loja, cidade, retirada) values ("Shoptime", "Sao Paulo", "N");*/
+
+-- select*from tb_categoria; -- // visualizando a tabela
+
+/*use db_ecommerce2; -- // comando para utilizar o database criado
+create table tb_produto (				
+	id bigint not null auto_increment, 		-- //matricula do produto
+	marca varchar(20),						-- // marca do produto
+    produto varchar(20), 					-- // tipo do produto, ex:TV, playstation, fogão 
+    valor int(10),							-- // valor do produto
+    estoque int(5),          			    -- // disponibilidade do produto no estoque (quantidade em numero)
+    loja_id bigint default null,     	-- //dado para conectar tabelas				
+    primary key(id),						-- // chave primaria determinando que id é a chave primaria
+    foreign key (loja_id) references tb_categoria(id)
+);*/
+-- populando a tabela tb_produto:
+
+/*insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Sony", "Playstation 5", 5000, 5, 2);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Samsung", "Celular S20", 4800, 10, 1);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("LG", "Celular K10", 800, 20, 3);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Apple", "Celular Iphone X", 3500, 3, 5);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Apple", "Tablet Ipad", 2600, 6, 5);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("LG", "TV widescreen 43", 3300, 10, 1);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Samsung", "TV widescreen 60", 5500, 6, 1);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Sony", "TV Bravia 55", 4000, 10, 4);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Philips", "Batedeira orbital", 120, 5, 2);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Brastemp", "Geladeira frostfree", 2000, 4, 2);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Electrolux", "Maquina de lavar", 1500, 5, 1);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Britania", "Fritadeira", 250, 10, 4);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Philco", "Chapinha para cabelo", 80, 20, 4);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Arno", "Ferro de passar", 100, 50, 2);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("Mondial", "Sanduicheira", 75, 50, 4);
+insert into tb_produto (marca, produto, valor, estoque, loja_id) values ("LG", "Microondas", 320, 4, 3);*/
+
+-- select*from tb_produto; -- // visualizando a tabela
+
+/*select*from tb_categoria -- // para visualizar as duas tabelas, inner join
+	inner join tb_produto on tb_categoria.id = tb_produto.loja_id*/
+    
+/*select tb_categoria.loja, tb_categoria.cidade, tb_produto.produto, tb_produto.valor  -- // para visualizar a tabela mais arrumada
+from tb_categoria
+	inner join tb_produto on tb_categoria.id = tb_produto.loja_id*/
+
+/*select tb_categoria.loja, tb_categoria.cidade, tb_produto.produto, tb_produto.valor -- // para visualizar nomes de produtos que começam com C
+from tb_categoria
+	inner join tb_produto on tb_categoria.id = tb_produto.loja_id
+    where tb_produto.produto like "C%"*/
+
+/*select tb_categoria.loja, tb_categoria.cidade, tb_produto.produto, tb_produto.valor -- // para visualizar nomes de produtos que começam com C
+from tb_categoria
+	inner join tb_produto on tb_categoria.id = tb_produto.loja_id
+    where tb_produto.valor > 2000*/
+
+/*select tb_categoria.loja, tb_categoria.cidade, tb_produto.produto, tb_produto.valor -- // para visualizar produtos com valores entre 1000 e 2000
+from tb_categoria
+	inner join tb_produto on tb_categoria.id = tb_produto.loja_id
+    where tb_produto.valor>1000 and tb_produto.valor<2000*/
+    
+/*select tb_categoria.loja, tb_categoria.cidade, tb_produto.produto, tb_produto.valor -- // Olha, coloquei pra procurar todos os produtos que é celular, porque não coloquei eletrodomestico em nenhum
+from tb_categoria
+	inner join tb_produto on tb_categoria.id = tb_produto.loja_id
+    where tb_produto.produto like "Celular%"*/
+    
+    -- na proxima coloca no enunciado logo na produção dos atributos que tem que ter se é eletrodomestico
+    -- pq só chorei se eu tiver que dropar minha tabela e arrumar 15 dados
+    

@@ -1,0 +1,78 @@
+-- create database db_RH2 -- // cria o database 
+
+/*use db_RH2; -- // comando para utilizar o database criado
+create table tb_cargo (				-- // criando a tabela cadastro
+	id bigint not null auto_increment, 		-- //matricula 
+    	cargo varchar(20),				-- // cargo do funcionario
+    	salario int(20),				-- // salario do funcionario
+    				
+    	primary key(id)					-- // chave primaria determinando que id é a chave primaria
+);*/
+
+-- populando a tabela tb_cargo:
+
+/*insert into tb_cargo (cargo, salario) values ("Desenvolvedor Java", 5000);
+insert into tb_cargo (cargo, salario) values ("Programador Python", 4500);
+insert into tb_cargo (cargo, salario) values ("Front end JS", 3800);
+insert into tb_cargo (cargo, salario) values ("Devops", 5000);
+insert into tb_cargo (cargo, salario) values ("Assistente tecnico", 1300);
+insert into tb_cargo (cargo, salario) values ("Back end", 5000);*/
+
+-- select*from tb_cargo; -- // visualizando a tabela
+
+/*use db_RH2; 	-- // comando para utilizar o database criado
+create table tb_funcionario (		
+	id bigint not null auto_increment, 		-- //matricula 
+    	nome varchar(100),				-- // nome do funcionario
+   	 func_id bigint default null,	                -- // id do funcionario
+    	periodo varchar (100),			        -- // periodo do trabalho, exe: matutino, vespertino, noturno...
+	contato int(12),				-- // telefone do funcionario para contato
+    	primary key(id),				-- // chave primaria determinando que id é a chave primaria
+    	foreign key (func_id) references tb_cargo (id) -- // chave estrangeira para relacionar o id da tabela funcionario com a tabela cargo.
+);*/
+ -- drop table tb_funcionário; -- // acabei colocando funcionario com acento e errei a foreign key, dropei a tabela, agora recriei outra.
+ 
+-- populando a tabela tb_funcionario:
+
+/*insert into tb_funcionario (nome, func_id, periodo, contato) values ("Cinthia Tengan", 1, "Matutino", 01999000323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Allan Gadelha", 5, "Noturno", 01999000323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Laise Falcao", 2, "Matutino", 01999080323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Ercilia regina", 2, "Noturno", 01999000383);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Isabele Ozawa", 3, "Vespertino", 01999200323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Bruno Roqueh", 3, "Matutino", 01999300323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Bruno Falango", 4, "Vespertino", 01999600323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Sthefany", 1, "Matutino", 01999070323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Gustavo Broch", 1,  "Noturno", 01999000823);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Lucas Correa", 2, "Noturno", 01999005523);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Camilla Cleane", 2, "Vespertino", 01999090323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Luccas Yuri", 3, "Matutino", 01999680323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Alana", 3, "Vespertino", 01999400323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Leonardo Silva", 5, "Noturno", 01999007323);
+insert into tb_funcionario (nome, func_id, periodo, contato) values ("Caio Tairone", 5, "Matutino", 01999900323);*/
+
+/* select*from tb_funcionario -- // para visualizar a tabela tb_funcionario com o join da tabela cargos e salarios.
+	inner join tb_cargo on tb_cargo.id = tb_funcionario.func_id */
+    
+/*select tb_funcionario.nome, tb_funcionario.periodo, tb_cargo.cargo, tb_cargo.salario  -- // para visualizar a tabela tb_funcionario mais arrumada por nome, periodo, cargo e salario
+from tb_funcionario 
+	inner join tb_cargo on tb_cargo.id = tb_funcionario.func_id */
+
+/*select tb_funcionario.nome, tb_funcionario.periodo, tb_cargo.cargo, tb_cargo.salario  -- // para visualizar nomes de funcionarios que começam com C
+from tb_funcionario 
+	inner join tb_cargo on tb_cargo.id = tb_funcionario.func_id
+    where tb_funcionario.nome like "C%"*/
+
+/*select tb_funcionario.nome, tb_funcionario.periodo, tb_cargo.cargo, tb_cargo.salario  -- // para visualizar as pessoas com salario maior que 2000
+from tb_funcionario 
+	inner join tb_cargo on tb_cargo.id = tb_funcionario.func_id 
+    where tb_cargo.salario > 2000*/
+
+/*select tb_funcionario.nome, tb_funcionario.periodo, tb_cargo.cargo, tb_cargo.salario  -- // para visualizar funcionarios com salarios entre 1000 e 2000
+from tb_funcionario 
+	inner join tb_cargo on tb_cargo.id = tb_funcionario.func_id
+    where tb_cargo.salario>1000 and tb_cargo.salario<2000*/
+    
+/*select tb_funcionario.nome, tb_funcionario.periodo, tb_cargo.cargo, tb_cargo.salario  -- // para visualizar todos os funcionarios com cargo programador
+from tb_funcionario
+	inner join tb_cargo on tb_cargo.id = tb_funcionario.func_id
+    where tb_cargo.cargo like "Programador%"*/
